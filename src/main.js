@@ -138,6 +138,9 @@ let newCharacters = [];
 // Calculate newCharacters length
 let newCharactersLen;
 
+// Flag to execute addEventListener
+let flag = false;
+
 // Function to generate a password from a length of characters choose by user
 function generatePass() {
 	filterChars();
@@ -170,7 +173,7 @@ function setPass() {
 			passTwo.textContent += pass2[i];
 		}
 	}
-	console.log(passOne.innerText);
+	flag = true;
 }
 
 // Function to filter characters selected by user
@@ -225,11 +228,15 @@ getSpecial.addEventListener('change', (event) => {
 });
 
 passOne.addEventListener('click', (event) => {
-	navigator.clipboard.writeText(passOne.innerText);
-	passOne.textContent = 'Copy to the clipboard';
+	if (flag === true) {
+		navigator.clipboard.writeText(passOne.innerText);
+		passOne.textContent = 'Copy to the clipboard';
+	}
 });
 
 passTwo.addEventListener('click', (event) => {
-	navigator.clipboard.writeText(passTwo.innerText);
-	passTwo.textContent = 'Copy to the clipboard';
+	if (flag === true) {
+		navigator.clipboard.writeText(passTwo.innerText);
+		passTwo.textContent = 'Copy to the clipboard';
+	}
 });
