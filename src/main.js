@@ -170,6 +170,7 @@ function setPass() {
 			passTwo.textContent += pass2[i];
 		}
 	}
+	console.log(passOne.innerText);
 }
 
 // Function to filter characters selected by user
@@ -223,24 +224,12 @@ getSpecial.addEventListener('change', (event) => {
 	}
 });
 
-// Switch case to add the filter arrays length
-// function calcFilterArrLen() {
-// 	const expr = 'object';
-// 	switch (expr) {
-// 		case typeof filterAzLower:
-// 			filterArrLen += filterAzLower.length - 1;
-// 			break;
-// 		case typeof filterAzUpper:
-// 			filterArrLen += filterAzUpper.length - 1;
-// 			break;
-// 		case typeof filterNums:
-// 			filterArrLen += filterNums.length - 1;
-// 			break;
-// 		case typeof filterSpecial:
-// 			filterArrLen += filterSpecial.length - 1;
-// 			break;
-// 		default:
-// 			filterArrLen += 0;
-// 			break;
-// 	}
-// }
+passOne.addEventListener('click', (event) => {
+	navigator.clipboard.writeText(passOne.innerText);
+	passOne.textContent = 'Copy to the clipboard';
+});
+
+passTwo.addEventListener('click', (event) => {
+	navigator.clipboard.writeText(passTwo.innerText);
+	passTwo.textContent = 'Copy to the clipboard';
+});

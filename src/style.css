@@ -83,3 +83,31 @@ label {
 #slider {
 	accent-color: var(--lightgreen);
 }
+
+input#slider {
+	position: relative;
+	top: 0.1rem;
+	margin: 0 0.4rem 0 0.4rem;
+}
+
+input#slider-amount {
+	width: 4vw;
+	height: 3vh;
+	@media (max-width: 1000px) {
+		width: 3vw;
+		height: 2vh;
+	}
+}
+
+/* Remove arrows/spinners from range input field */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
