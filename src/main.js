@@ -135,19 +135,22 @@ let joinArr = characters.join();
 // New set of characters based on user input
 let newCharacters = [];
 
+// Calculate newCharacters length
+let newCharactersLen;
+
 // Function to generate a password from a length of characters choose by user
 function generatePass() {
 	filterChars();
+
 	console.log(newCharacters);
-	console.log(filterArrLen);
 
 	pass1 = [];
 	pass2 = [];
 	passOne.textContent = '';
 	passTwo.textContent = '';
 	for (let i = 0; i < sliderAmount; i++) {
-		randNum1 = Math.floor(Math.random() * filterArrLen) + 1;
-		randNum2 = Math.floor(Math.random() * filterArrLen) + 1;
+		randNum1 = Math.floor(Math.random() * newCharactersLen) + 1;
+		randNum2 = Math.floor(Math.random() * newCharactersLen) + 1;
 		pass1.push(newCharacters[randNum1]);
 		pass2.push(newCharacters[randNum2]);
 	}
@@ -183,6 +186,8 @@ function filterChars() {
 	if (getSpecial.value === 'true') {
 		newCharacters += joinArr.match(regexSpecial);
 	}
+	newCharacters = newCharacters.replace(/,/g, '');
+	newCharactersLen = newCharacters.length - 1;
 }
 
 // Add event listeners for the checkboxes
@@ -219,23 +224,23 @@ getSpecial.addEventListener('change', (event) => {
 });
 
 // Switch case to add the filter arrays length
-function calcFilterArrLen() {
-	const expr = 'object';
-	switch (expr) {
-		case typeof filterAzLower:
-			filterArrLen += filterAzLower.length - 1;
-			break;
-		case typeof filterAzUpper:
-			filterArrLen += filterAzUpper.length - 1;
-			break;
-		case typeof filterNums:
-			filterArrLen += filterNums.length - 1;
-			break;
-		case typeof filterSpecial:
-			filterArrLen += filterSpecial.length - 1;
-			break;
-		default:
-			filterArrLen += 0;
-			break;
-	}
-}
+// function calcFilterArrLen() {
+// 	const expr = 'object';
+// 	switch (expr) {
+// 		case typeof filterAzLower:
+// 			filterArrLen += filterAzLower.length - 1;
+// 			break;
+// 		case typeof filterAzUpper:
+// 			filterArrLen += filterAzUpper.length - 1;
+// 			break;
+// 		case typeof filterNums:
+// 			filterArrLen += filterNums.length - 1;
+// 			break;
+// 		case typeof filterSpecial:
+// 			filterArrLen += filterSpecial.length - 1;
+// 			break;
+// 		default:
+// 			filterArrLen += 0;
+// 			break;
+// 	}
+// }
