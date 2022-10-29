@@ -104,6 +104,7 @@ let firstSpan = document.getElementById('first-span');
 let secondSpan = document.getElementById('sd-span');
 // firstSpan.style.display = 'none';
 // secondSpan.style.display = 'none';
+let sliderAmount = document.getElementById('slider-amount');
 
 let arrLen = characters.length - 1;
 let randNum1 = 0;
@@ -165,4 +166,16 @@ function copyTxt() {
 			passOne.textContent = 'Copy to the clipboard';
 		})
 	);
+}
+
+sliderAmount.rendered = function () {
+	document.getElementById('slider-amount').oninput = function () {
+		myFunction();
+	};
+};
+
+function myFunction() {
+	let val = document.getElementById('slider-amount').value; //gets the oninput value
+	document.getElementById('output').innerHTML = val; //displays this value to the html page
+	console.log(val);
 }

@@ -75,3 +75,11 @@ h2 {
 label {
 	color: white;
 }
+
+#lower,
+#upper,
+#nums,
+#special,
+#slider {
+	accent-color: var(--lightgreen);
+}

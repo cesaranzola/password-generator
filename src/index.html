@@ -53,16 +53,17 @@
 							min="1"
 							max="15"
 							value="7"
+							id="slider-amount"
 							oninput="this.form.amountRange.value=this.value"
 						/>
 					</div>
 					<div>
 						<label for="symb">A-Z</label>
-						<input type="checkbox" id="symb" name="symb" />
+						<input type="checkbox" id="lower" name="symb" />
 					</div>
 					<div>
 						<label for="nums">a-z</label>
-						<input type="checkbox" id="nums" name="nums" />
+						<input type="checkbox" id="upper" name="nums" />
 					</div>
 					<div>
 						<label for="nums">0-9</label>
@@ -70,7 +71,7 @@
 					</div>
 					<div>
 						<label for="nums">!@#$%^&*</label>
-						<input type="checkbox" id="nums" name="nums" />
+						<input type="checkbox" id="special" name="nums" />
 					</div>
 					<hr id="divide" />
 				</div>
