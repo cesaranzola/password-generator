@@ -1,3 +1,4 @@
+// Array of characters from which the password is generated
 const characters = [
 	'A',
 	'B',
@@ -92,27 +93,39 @@ const characters = [
 	'/',
 ];
 
-// Generate to random pass of 15 chars long
-// Ability to set password length
-// copy-on-click > hover effect
-// toggle symbols and numbers on/off
 
+// Buttons
 let generatePassBtn = document.getElementById('generate-p');
 let passOne = document.getElementById('pass-one');
 let passTwo = document.getElementById('pass-two');
-let firstSpan = document.getElementById('first-span');
-let secondSpan = document.getElementById('sd-span');
-let sliderAmount = parseInt(document.getElementById('slider-amount').value);
-let getLower = document.getElementById('lower').value;
 
+
+// Slider range value
+let sliderAmount = parseInt(document.getElementById('slider-amount').value);
+
+
+// Check boxes on/off values
+let getLower = document.getElementById('lower').value;
+let getUpper = document.getElementById('upper').value;
+let getNums = document.getElementById('nums').value;
+let getSpecial = document.getElementById('special').value;
+
+
+// Array data length
 let arrLen = characters.length - 1;
+
+// Variables for random numbers
 let randNum1 = 0;
 let randNum2 = 0;
+
+// Empty arrays to store random characters
 let pass1 = [];
 let pass2 = [];
 
+
+// Function to generate a password from a length of characters choose by user
 function generatePass() {
-	console.log(typeof getLower) ;
+	console.log(typeof getLower);
 
 	pass1 = [];
 	pass2 = [];
@@ -126,6 +139,7 @@ function generatePass() {
 	}
 }
 
+// Function to update the buttons and display the generated passwords
 function setPass() {
 	generatePass();
 	for (let i = 0; i < sliderAmount; i++) {
