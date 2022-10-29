@@ -99,7 +99,7 @@ let passOne = document.getElementById('pass-one');
 let passTwo = document.getElementById('pass-two');
 
 // Slider range value
-let sliderAmount = parseInt(document.getElementById('slider-amount').value);
+let sliderAmount;
 
 // Check boxes on/off values
 let getLower = document.getElementById('lower');
@@ -144,8 +144,7 @@ let flag = false;
 // Function to generate a password from a length of characters choose by user
 function generatePass() {
 	filterChars();
-
-	console.log(newCharacters);
+	sliderAmount = parseInt(document.getElementById('range').value);
 
 	pass1 = [];
 	pass2 = [];
@@ -240,3 +239,22 @@ passTwo.addEventListener('click', (event) => {
 		passTwo.textContent = 'Copy to the clipboard';
 	}
 });
+
+function sliderVal(val) {
+	document.getElementById('range').value = val;
+}
+
+
+// CSS Tr
+const range = document.getElementById('range'),
+	rangeV = document.getElementById('rangeV'),
+	setValue = () => {
+		const newValue = Number(
+				((range.value - range.min) * 100) / (range.max - range.min)
+			),
+			newPosition = 10 - newValue * 0.2;
+		rangeV.innerHTML = `<span>${range.value}</span>`;
+		rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+	};
+document.addEventListener('DOMContentLoaded', setValue);
+range.addEventListener('input', setValue);
