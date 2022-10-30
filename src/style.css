@@ -11,8 +11,6 @@ body {
 	font-family: 'Cairo', sans-serif;
 }
 
-
-
 .downbtn {
 	width: 204.14px;
 	height: 48px;
@@ -29,12 +27,12 @@ body {
 
 .my-container {
 	background-color: #1f2937;
-    border: solid 5px #fff;
+	border: solid 5px #fff;
 	margin-top: 10vh;
-    padding: 5rem;
-    padding-top: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 0 3px var(--lightgreen);
+	padding: 5rem;
+	padding-top: 1rem;
+	border-radius: 5px;
+	box-shadow: 0 0 0 3px var(--lightgreen);
 }
 
 h1,
@@ -179,6 +177,9 @@ input[type='range']:focus::-webkit-slider-runnable-track {
 	margin-top: -1px;
 }
 
+/* End of code to study */
+
+
 /* Animation */
 @keyframes tilt-shaking-global {
 	0% {
@@ -222,4 +223,16 @@ input[type='range']:focus::-webkit-slider-runnable-track {
 
 .constant-tilt-shake-item {
 	animation: tilt-shaking-item 0.3s infinite;
+}
+
+@media (max-width: 620px) {
+	.my-container {
+		background-color: #1f2937;
+		border: solid 5px #fff;
+		padding: 2rem;
+		padding-top: 1rem;
+		border-radius: 5px;
+		box-shadow: 0 0 0 3px var(--lightgreen);
+		margin: 10vh 2vw 0 2vw;
+	}
 }
